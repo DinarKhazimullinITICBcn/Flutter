@@ -83,11 +83,15 @@ class ElMeuBody extends StatelessWidget {
             itemCount: items.length,
             itemBuilder: (BuildContext context, int index) {
               return ListTile(
-                  leading: Icon(Icons.star_half),
-                  title: Text(items[index]),
-                  trailing: SizedBox(height: 80, width:100, child: ComptadorEnter()
-                  )  
-              );
+                leading: Icon(Icons.star_half),
+                title: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(items[index]),
+                    ComptadorEnter()
+                  ],
+                )
+              );  
             }
           ),
         ),
@@ -97,6 +101,9 @@ class ElMeuBody extends StatelessWidget {
 }
 
 class ComptadorEnter extends StatefulWidget  {
+  const ComptadorEnter({super.key});
+
+  @override
   _ComptadorEnterState createState() => _ComptadorEnterState();
 }
 
